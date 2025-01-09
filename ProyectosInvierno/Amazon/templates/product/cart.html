@@ -1,0 +1,32 @@
+{% extends "template.html" %}
+
+{% block body %}
+<div class="container mt-5">
+    <h2 class="mb-4">Your Cart</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Producto 1</td>
+                <td>5</td>
+                <td>$56</td>
+                <td>${{ 5 * 56 }}</td>
+                <td>
+                    <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-danger btn-sm">Remove</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Total: ${{ 5 * 56 }}</h3>
+    <a href="{% url 'checkout' %}" class="btn btn-primary">Proceed to Checkout</a>
+    <p>Your cart is empty.</p>
+</div>
+{% endblock %}

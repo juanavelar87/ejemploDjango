@@ -1,0 +1,9 @@
+{% extends 'template.html' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center mt-5">Bienvenido</h1>
+        <p class="text-center">Esta es la página de inicio</p>
+        <a href="{% url 'access:login'  %}">Link a inicio de sesión</a>
+    </div>
+{% endblock %}

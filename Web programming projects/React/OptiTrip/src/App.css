@@ -1,0 +1,65 @@
+.left-components{
+  z-index: 2;
+  position: absolute;
+  left:0%;
+  top:0%;
+}
+.menu-parameters-icons{
+  font-size: 25px;
+  background-color: rgb(20, 20, 20);
+  margin:20px;
+  padding: 10px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  border-radius: 200px;
+  color:rgb(255, 255, 255);
+  cursor: pointer;
+}
+.menu-parameters-icons:hover{
+  background-color: rgb(40, 40, 40);
+  width:55px;
+}
+.shift_started_modal{
+display: block; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 4; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+}
+.remove-element{
+box-sizing: content-box;
+width: 1em;
+height: 1em;
+padding: 0.25em 0.25em;
+color: #000;
+border: 0;
+border-radius: 0.25rem;
+opacity: .5;
+display: flex;
+justify-content: center;
+align-items: center;
+margin:0px;
+float: right;
+position:absolute;
+right:3px;
+top:3px;
+}
+@media (max-width:990px) {
+.left-components{
+margin-top:40px;
+}
+}
+@media (min-width:990px) {
+.left-components{
+margin-top:0px;
+}
+}
+.transportation-icon{
+font-size: 50px;
+}
