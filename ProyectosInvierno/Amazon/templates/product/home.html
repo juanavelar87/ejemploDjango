@@ -3,7 +3,7 @@
 {% block body %}
 <div class="container mt-5">
     <h2 class="mb-4">Products</h2>
-    <button class="btn btn-primary" onclick="redirigir()">Crear uno</button>
+    <button class="btn btn-primary" onclick="redirigir(`{% url 'product:create_product' %}`)">Crear uno</button>
     <div class="row">
         {% for product in products %}
         <div class="col-md-4">

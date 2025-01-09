@@ -6,8 +6,8 @@
     <title>Inicio</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script>
-        function redirigir() {
-            location.href = "{% url 'product:create_product' %}";
+        function redirigir(url) {
+            location.href = url;
         }
     </script>
 </head>
@@ -26,8 +26,12 @@
     
     
             <div class="text-end" style="width:calc(100% - 250px); float:right; display:flex; justify-content:flex-end;">
-              <button type="button" class="btn btn-outline-light me-2" onclick="redirigir('')">Login</button>
-              <button type="button" class="btn btn-warning">Sign-up</button>
+              {% if user.is_authenticated %}
+              <button type="button" class="btn btn-outline-light me-2" onclick="redirigir(`{% url 'access:logout'%}`)">Logout</button>
+              {% else %}
+              <button type="button" class="btn btn-outline-light mr-2" onclick="redirigir(`{% url 'access:login'%}`)">Login</button>
+              <button type="button" class="btn btn-warning"  onclick="redirigir(`{% url 'access:register'%}`)">Register</button>
+              {% endif %}
             </div>
           </div>
         </div>

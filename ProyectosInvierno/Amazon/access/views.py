@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.urls import reverse
-
+from django.contrib.auth import logout
 from access.models import Usuario
 
 def loginView(request):
@@ -30,6 +30,10 @@ def loginView(request):
         else:
             return render(request, "access/login.html")
     
+def logoutView(request):
+    logout(request)
+    return HttpResponseRedirect(reverse("product:home"))
+
 def registerView(request):
     if request.method=="GET":
         return render(request, "access/register.html")
